@@ -18,9 +18,9 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
 
     @Override
-    public List<User> getUsersWithPagination(Integer pageNumber, Integer pageSize) {
+    public List<User> getUsersWithPagination(Pageable pageable) {
 
-        Pageable pageable = PageRequest.of(pageNumber, pageSize);
+        //Pageable pageable = PageRequest.of(pageNumber, pageSize);
 
         Page<User> page = userRepository.findAll(pageable);
 
